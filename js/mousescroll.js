@@ -288,3 +288,26 @@
 	return exports;
 
 });
+
+function myFunction(input) { 
+	var dotsInput="dots"+ input;
+	// console.log(input);
+	var dots = document.getElementById(dotsInput);
+	console.log(dots);
+	var moreText = document.getElementById("more"+ input);
+	console.log(moreText);
+
+	var btnText = document.getElementById(input);
+  
+	if (dots.style.display === "none") {
+	  dots.style.display = "inline";
+	  btnText.innerHTML = "Mer info";
+	  moreText.style.display = "none";
+	} else {
+	  dots.style.display = "none";
+	  btnText.innerHTML = "Visa mindre";
+	  moreText.style.display = "inline";
+	}
+  }
+
+ 
