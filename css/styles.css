@@ -795,10 +795,10 @@ margin: 0;
   border-radius: 100px;
   margin-bottom: 20px;
 }
-#pricing {
+#giftCard {
   padding: 100px 0 70px;
 }
-#pricing ul.pricing {
+#giftCard ul.pricing {
   list-style: none;
   padding: 0;
   margin: 70px 0 30px;
@@ -807,16 +807,16 @@ margin: 0;
   text-align: center;
   background: #FFFFFF;
 }
-#pricing ul.pricing li {
+#giftCard ul.pricing li {
   display: block;
   padding: 10px;
 }
-#pricing ul.pricing li.plan-header { 
+#giftCard ul.pricing li.plan-header {
   padding: 15px 15px 30px;
   color: #3B8838 !important;
   height: 225px;
 }
-#pricing ul.pricing li.plan-header .price-duration {
+#giftCard ul.pricing li.plan-header .price-duration {
   position: relative;
   margin-top: 15px;
   top: -16px;
@@ -828,19 +828,19 @@ margin: 0;
 li.plan-purchase .btn {
   width: 100%;
 }
-#pricing ul.pricing li.plan-header .price-duration > span {
+#giftCard ul.pricing li.plan-header .price-duration > span {
   display: block;
   line-height: 1;
 }
-#pricing ul.pricing li.plan-header .price-duration > span.price {
+#giftCard ul.pricing li.plan-header .price-duration > span.price {
   font-size: 24px;
   font-weight: 700;
   margin-top: 35px;
 }
-#pricing ul.pricing li.plan-header .price-duration > span.duration {
+#giftCard ul.pricing li.plan-header .price-duration > span.duration {
   margin-top: 5px;
 }
-#pricing ul.pricing li.plan-header .plan-name {
+#giftCard ul.pricing li.plan-header .plan-name {
   margin-top: 10px;
   font-size: 24px;
   color: #5A5A5A;
@@ -848,17 +848,17 @@ li.plan-purchase .btn {
   line-height: 1;
   text-transform: uppercase;
 }
-#pricing ul.pricing.featured {
+#giftCard ul.pricing.featured {
   background: #98DC95; 
   border: 0;
   border: 1px solid #D0D0D0;
 }
-#pricing ul.pricing.featured  li.plan-header .price-duration{
+#giftCard ul.pricing.featured  li.plan-header .price-duration{
 color: #3B8838;
 }
-#pricing ul.pricing.featured li.plan-header {
+#giftCard ul.pricing.featured li.plan-header {
 }
-#pricing ul.pricing.featured li.plan-header .plan-name {
+#giftCard ul.pricing.featured li.plan-header .plan-name {
   color: #3B8838;
 }
 #contact-us {
