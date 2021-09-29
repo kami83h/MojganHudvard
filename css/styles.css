@@ -633,27 +633,27 @@ color: #3B8838;
 
 }
 
-#our-team {
+#bokadirect {
   padding: 100px 0;
 }
-#our-team .team-member {
+#bokadirect .team-member {
   padding: 0;  
 }
-#our-team .team-member .team-img {
+#bokadirect .team-member .team-img {
   margin: 0;
   
 }
-#our-team .team-member .team-info { 
+#bokadirect .team-member .team-info {
   background: #f7e1b5;
   color: #3B8838;
   padding: 7px 0;
   border-top: 2px solid #fff;
 } 
-#our-team .team-member:hover .social-icons > li > a {
+#bokadirect .team-member:hover .social-icons > li > a {
   color: #3B8838;
 }
  
-#our-team .social-icons {
+#bokadirect .social-icons {
   list-style: none;
   padding: 0;
   margin: 0;  
@@ -662,10 +662,10 @@ color: #3B8838;
   background: #FFFFFF;
   padding: 6px 0 6px;
 }
-#our-team .social-icons > li {
+#bokadirect .social-icons > li {
   display: inline-block;
 }
-#our-team .social-icons > li > a {
+#bokadirect .social-icons > li > a {
   display: block;
   width: 32px;
   height: 32px;
