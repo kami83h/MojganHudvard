@@ -3,70 +3,83 @@ function reviews() {
     $.getJSON('https://www.bokadirekt.se/api/places/getReviews/36026', function (data) {
 
         let dataArrays = data.items;
-        let score, text, date, userName;
-        let divRow, hrElement, divHead, divName, divDate, buttonRate, spanRate, divText, divRate;
-        let scoreList = [];
+        fillData('reviewBody2', dataArrays, dataArrays.length);
+        fillData('reviewBody', dataArrays, 3);
 
-        for (let i = 0; i < dataArrays.length; i++) {
-            let count = dataArrays[i];
-            score = count.review.score;
-            text = count.review.text;
-            date = count.createdAt;
-            userName = count.author.name;
+    });
+}
 
-            divRow = document.createElement("div");
-            divRow.className = "row";
+function fillData(id, dataArrays, length) {
+    let score, text, fullDate, userName;
+    let divRow, hrElement, divHead, divName, divDate, buttonRate, spanRate, divText, divRate;
+    let scoreList = [];
 
-            hrElement = document.createElement('hr');
+    for (let i = 0; i < length; i++) {
+        let count = dataArrays[i];
+        score = count.review.score;
+        text = count.review.text;
+        fullDate = count.createdAt;
+        userName = count.author.name;
 
-            divHead = document.createElement("div");
-            divHead.className = "col-sm-3";
+        divRow = document.createElement("div");
+        divRow.className = "row";
 
-            divName = document.createElement('div');
-            divName.className = "review-block-name";
-            divName.innerHTML = userName;
+        divHead = document.createElement("div");
+        divHead.className = "col-sm-3";
 
-            divDate = document.createElement('div');
-            divDate.className = "review-block-date";
-            divDate.innerHTML = date;
+        divName = document.createElement('div');
+        divName.className = "review-block-name";
+        divName.innerHTML = userName;
 
-            const divBody = document.createElement("div");
-            divBody.className = "col-sm-9";
+        divDate = document.createElement('div');
+        divDate.className = "review-block-date";
+        const date = new Date(fullDate);
 
-            divRate = document.createElement('div');
-            divRate.className = "review-block-rate";
 
-            for (let j = 0; j < score; j++) {
+        divDate.innerHTML = date.yyyymmdd();
 
-                buttonRate = document.createElement('button');
-                buttonRate.type = "button";
-                buttonRate.ariaLabel = "Left Align";
-                buttonRate.className = "btn btn-warning btn-xs";
+        const divBody = document.createElement("div");
+        divBody.className = "col-sm-9";
 
-                spanRate = document.createElement('span')
-                spanRate.className = "glyphicon glyphicon-star";
-                spanRate.ariahidden = true;
+        divRate = document.createElement('div');
+        divRate.className = "review-block-rate";
 
-                buttonRate.appendChild(spanRate);
-                divRate.appendChild(buttonRate);
-            }
-            divText = document.createElement('div');
-            divText.className = "review-block-description";
-            divText.innerHTML = text;
+        for (let j = 0; j < score; j++) {
 
-            divHead.appendChild(divName);
-            divHead.appendChild(divDate);
-            divBody.appendChild(divRate);
-            divBody.appendChild(divText);
-            divRow.appendChild(divHead);
-            divRow.appendChild(divBody);
+            buttonRate = document.createElement('button');
+            buttonRate.type = "button";
+            buttonRate.ariaLabel = "Left Align";
+            buttonRate.className = "btn btn-warning btn-xs";
 
-            document.getElementById('reviewBody').appendChild(divRow);
-            document.getElementById('reviewBody').appendChild(hrElement);
+            spanRate = document.createElement('span')
+            spanRate.className = "glyphicon glyphicon-star";
+            spanRate.ariahidden = true;
+
+            buttonRate.appendChild(spanRate);
+            divRate.appendChild(buttonRate);
+        }
+        divText = document.createElement('div');
+        divText.className = "review-block-description";
+        divText.innerHTML = text;
+
+        divHead.appendChild(divName);
+        divHead.appendChild(divDate);
+        divBody.appendChild(divRate);
+        divBody.appendChild(divText);
+        divRow.appendChild(divHead);
+        divRow.appendChild(divBody);
+
+        document.getElementById(id).appendChild(divRow);
+
+        hrElement = document.createElement('hr');
+        document.getElementById(id).appendChild(hrElement);
+        if (score > 3) {
             scoreList.push(score)
         }
+    }
+    if (scoreList.length > 3) {
         rating(scoreList);
-    });
+    }
 }
 
 function rating(scoreList) {
@@ -100,9 +113,7 @@ function rating(scoreList) {
             break;
 
     }
-
     document.getElementById('ratingHandle').appendChild(head);
-
 }
 
 function createBodyRating(number) {
@@ -128,6 +139,16 @@ function createBodyRating(number) {
     }
     document.getElementById('ratingHandleButton').appendChild(rateDiv);
 }
+
+Date.prototype.yyyymmdd = function () {
+    var mm = this.getMonth() + 1; // getMonth() is zero-based
+    var dd = this.getDate();
+
+    return [this.getFullYear(),
+        (mm > 9 ? '' : '0') + mm,
+        (dd > 9 ? '' : '0') + dd
+    ].join('/');
+};
 
 reviews();
 

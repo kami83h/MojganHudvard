@@ -58,13 +58,10 @@
     <div class="banner-inner">
         <div class="container">
             <div class="row">
-                <div>
                     <h2>Vackrare än NÅGONSIN</h2>
                     <a class="btn btn-warning"
                        href="https://www.bokadirekt.se/boka-tjanst/mojgan-hudv%C3%A5rd-36026/konsultation-k%C3%B6pa-produkt-1133322">
-                        Boka fri Konsultation </a>
-
-                </div>
+                        Boka FRI Konsultation </a>
             </div>
         </div>
     </div>
@@ -1684,6 +1681,33 @@
                 <hr/>
                 <div class="review-block">
                     <div id="reviewBody"></div>
+                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalNorm">
+                        Visa fler recensioner
+                    </button>
+                    <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <button type="button" class="close"
+                                            data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>
+                                    <h2 class="modal-title" id="myModalLabel">
+                                        Betyg och recensioner
+                                    </h2>
+                                </div>
+
+                                <!-- Modal Body -->
+                                <div class="modal-body">
+                                    <div id="reviewBody2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -1765,18 +1789,13 @@
             <div class="col-sm-6">
                 <ul class="social-icons">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-github"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
     </div>
 </footer>
 <!--/#footer-->
-
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/mousescroll.js"></script>
@@ -1788,5 +1807,4 @@
 <script src="js/wow.min.js"></script>
 <script src="js/custom-scripts.js"></script>
 </body>
-
 </html>
