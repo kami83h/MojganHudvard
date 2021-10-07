@@ -263,20 +263,14 @@ background: #FFF;
     background-color: transparent;
   }
 }
-
-#hero-banner{
-  overflow: hidden;
-  height: 700px;
-  background: url('../images/banner/banner.jpg');
-  background-size:cover;
-  color:#fff;
-}
-#hero-banner.item {
-  height: 558px;
-  background-repeat: no-repeat;
-  background-position: 50% 0;
+.full {
+  background: url('../images/banner/banner.jpg') no-repeat;
+  padding: 0 !important;
+  margin: 0 auto !important;
   background-size: cover;
+  overflow: hidden;
 }
+
 #hero-banner.banner-inner {
   position: absolute;
   top: 0;
@@ -286,43 +280,34 @@ background: #FFF;
   color: #000;
 }
 #hero-banner h2 {
-  margin-top: 299px;
+  margin-top: 270px;
   font-size: 39px;
   line-height: 49px;
   color: #fdfefc;
-  text-align: left;
   font-weight: bold;
-
 }
-/* #hero-banner h2 b{
+ #hero-banner h2 b{
 color: #FFFFFF;
 text-shadow: 1px 1px 2px black, 0 0 25px rgb(255, 217, 0), 0 0 5px rgb(139, 107, 0);
-text-align: center;
 
-} */
-#hero-banner p { 
-  font-size: 22px; 
-margin-bottom:20px;
-line-height:35px; 
-
-  text-align: right;
+}
+#hero-banner p {
+  font-size: 22px;
+line-height:35px;
   color: #FFF;
 }
 #hero-banner a{
 width: 170px;
-margin: 0;
 display: block;
 background:rgb(143, 179, 81);
 border: 2px solid rgb(202, 220, 201);
-float: left;
 border-radius:1em;
 box-shadow: 0px 15px 20px rgba(22, 31, 28, 0.4);
 
 }
 #hero-banner a:hover{
-text-align: center;
+
 width: 170px;
-margin: 0 auto;
 display: block;
 background: #71DE6C;
 border: 2px solid #71DE6C;
@@ -613,19 +598,14 @@ color: black;
 color: #3B8838;
 }
 /*Team*/ 
-.center {
+.bokaDirektStyle {
   display: block;
-  text-align: center;  
   width: 50%;  
   border: 3px ridge cornsilk;  
   padding: 5px;  
   border-radius:10px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  position: absolute;
-  left: 80%;
   margin: 0 auto;
-
-
 }
 
 #bokadirect {
