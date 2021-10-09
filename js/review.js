@@ -1,9 +1,12 @@
+
+let scoreStarList = [];
 function reviews() {
 
     $.getJSON('https://www.bokadirekt.se/api/places/getReviews/36026', function (data) {
 
         let dataArrays = data.items;
         fillData('reviewBody2', dataArrays, dataArrays.length);
+        countScore();
         fillData('reviewBody', dataArrays, 3);
 
     });
@@ -12,8 +15,8 @@ function reviews() {
 function fillData(id, dataArrays, length) {
     let score, text, fullDate, userName;
     let divRow, hrElement, divHead, divName, divDate, buttonRate, spanRate, divText, divRate;
-    let scoreList = [];
 
+    let scoreList = [];
     for (let i = 0; i < length; i++) {
         let count = dataArrays[i];
         score = count.review.score;
@@ -76,10 +79,32 @@ function fillData(id, dataArrays, length) {
         if (score > 3) {
             scoreList.push(score)
         }
+        scoreStarList.push(score);
     }
     if (scoreList.length > 3) {
         rating(scoreList);
     }
+}
+
+function countScore() {
+    const counts = {};
+    scoreStarList.forEach(function (x) {
+        counts[x] = (counts[x] || 0) + 1;
+    });
+    for (let i = 1; i < 6; i++) {
+
+        if (counts[i] === undefined) {
+            addStarToValue("star" + i, 0)
+        } else {
+            addStarToValue("star" + i, counts[i])
+        }
+    }
+}
+
+function addStarToValue(id, countStar) {
+    let divName = document.createElement('div');
+    divName.innerHTML = countStar;
+    document.getElementById(id).appendChild(divName);
 }
 
 function rating(scoreList) {

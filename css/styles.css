@@ -57,13 +57,10 @@ hr {
 text-align:center;
 }
 .section-header .section-title {
-  font-size: 44px;
-  color: goldenrod;
   position: relative;
   padding-bottom: 20px;
-  margin: 0 0 20px;  
-
-
+  font-family: Gill Sans, sans-serif;
+  margin: 0 0 20px;
   display: block;
   text-align: center;
 }
@@ -358,7 +355,7 @@ color: #020202;
 }
 #services, #features {
   padding: 100px 0 75px;
-  background-color: #f7e1b5;
+  background-color: #fbf7f7;
   border-top: 3px solid #fff;
   /*background: url('../images/img2.jpg');      background-size: cover;*/
 }
@@ -405,8 +402,7 @@ padding-top: 10px;
 }
 #portfolio {
   padding: 100px 0;
-  background: #FFFFFF;
-  background: url('../images/img4.jpg');
+  background-color: #fbf7f7;
   background-size: cover;
 }
 #portfolio .portfolio-filter {
